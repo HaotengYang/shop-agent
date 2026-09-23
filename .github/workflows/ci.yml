@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: [main, dev, staging]
+  pull_request:
+
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - run: uv sync
+      - name: Seed and index
+        run: |
+          uv run python -m shop_agent.seed
+          uv run python -c "from shop_agent import vectorstore; vectorstore.index_docs()"
+      - name: Contract tests (mock model)
+        run: uv run pytest -q
+      - name: Eval quality gate (real model, only when a key is configured)
+        if: ${{ secrets.LLM_API_KEY != '' }}
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: uv run python eval/run_eval.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: eval/results/
+          if-no-files-found: ignore

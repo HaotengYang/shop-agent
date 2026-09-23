@@ -1,0 +1,56 @@
+PASS sql-001    rows=1 gold=1                            What was total revenue in March 2026?
+PASS sql-002    rows=1 gold=1                            How many orders did we get in March 2026?
+PASS sql-003    rows=1 gold=1                            What was total revenue in April 2026?
+PASS sql-004    rows=1 gold=1                            How many orders did we get in April 2026?
+PASS sql-005    rows=1 gold=1                            What was total revenue in May 2026?
+PASS sql-006    rows=1 gold=1                            How many orders did we get in May 2026?
+PASS sql-007    rows=1 gold=1                            What was total revenue in June 2026?
+PASS sql-008    rows=1 gold=1                            How many orders did we get in June 2026?
+PASS sql-009    rows=1 gold=1                            What was total revenue in July 2026?
+PASS sql-010    rows=1 gold=1                            How many orders did we get in July 2026?
+PASS sql-011    rows=1 gold=1                            What was total revenue in August 2026?
+PASS sql-012    rows=1 gold=1                            How many orders did we get in August 2026?
+FAIL sql-013    rows=1 gold=1                            What was the average order value in July 2026?
+PASS sql-014    rows=1 gold=1                            How many orders were refunded in June 2026?
+PASS sql-015    rows=1 gold=1                            What is the refund rate for August 2026, as a percentage of all orders
+PASS sql-016    rows=1 gold=1                            How many orders were cancelled in total between March and August 2026?
+PASS sql-017    rows=3 gold=3                            Revenue by sales channel in July 2026?
+PASS sql-018    rows=1 gold=1                            Which channel had the most orders in August 2026?
+PASS sql-019    rows=1 gold=1                            How much revenue came from TikTok Shop in June 2026?
+PASS sql-020    rows=1 gold=1                            How much revenue came from Amazon in May 2026?
+PASS sql-021    rows=6 gold=6                            Monthly revenue from March to August 2026, one row per month.
+PASS sql-022    rows=6 gold=6                            Monthly order counts from March to August 2026.
+FAIL sql-023    rows=1 gold=1                            Total discounts given in July 2026?
+PASS sql-024    rows=1 gold=1                            How many orders in July 2026 used a discount?
+FAIL sql-025    rows=1 gold=1                            Total shipping fees collected in April 2026?
+PASS sql-026    rows=1 gold=1                            What share of August 2026 orders qualified for free shipping?
+PASS sql-027    rows=1 gold=1                            Which day in July 2026 had the highest revenue?
+PASS sql-028    rows=1 gold=1                            Average number of orders per day in June 2026?
+PASS sql-029    rows=1 gold=1                            Which product sold the most units in July 2026?
+PASS sql-030    rows=3 gold=3                            Top 3 products by revenue across all months.
+PASS sql-031    rows=1 gold=1                            How many units of the Herbal Mouth Spray were sold in August 2026?
+PASS sql-032    rows=8 gold=8                            Units sold per product in June 2026.
+PASS sql-033    rows=1 gold=1                            Which product sold the fewest units in May 2026?
+PASS sql-034    rows=1 gold=1                            What is the gross margin percentage of the Fluoride-Free Starter Bundl
+PASS sql-035    rows=8 gold=8                            List all products with their price and cost.
+PASS sql-036    rows=1 gold=1                            How many active products do we sell?
+PASS sql-037    rows=1 gold=1                            Total gross profit in July 2026 (units times price minus cost)?
+PASS sql-038    rows=1 gold=1                            Average items per order in August 2026?
+PASS sql-039    rows=1 gold=1                            How many orders in July 2026 included the Bamboo Facial Tissue?
+PASS sql-040    rows=2 gold=2                            Revenue from the oral_care category versus other categories in August 
+PASS sql-041    rows=1 gold=1                            How many unique customers ordered in July 2026?
+PASS sql-042    rows=1 gold=1                            How many new customers did we acquire in June 2026 (first order that m
+PASS sql-043    rows=1 gold=1                            How many customers have placed more than one order?
+PASS sql-044    rows=1 gold=1                            What percentage of customers are repeat customers?
+PASS sql-045    rows=1 gold=1                            Which US state has the most customers?
+PASS sql-046    rows=1 gold=1                            How many orders came from Canadian customers in total?
+FAIL sql-047    route=error                              Top 5 states by revenue in August 2026.
+FAIL sql-048    route=error                              Average lifetime revenue per customer?
+FAIL sql-049    route=error                              Total ad spend in July 2026?
+FAIL sql-050    route=error                              Ad spend by platform in August 2026.
+FAIL sql-051    route=error                              Which platform had the lowest cost per click in June 2026?
+FAIL sql-052    route=error                              What was the click-through rate on Meta in July 2026?
+FAIL sql-053    route=error                              How many orders were attributed to TikTok ads in August 2026?
+FAIL sql-054    route=error                              Cost per attributed order by platform in July 2026.
+FAIL sql-055    route=error                              Which campaign spent the most in May 2026?
+FAIL sql-056    route=error                              Total ad spend versus total revenue in June 2026.

@@ -1,0 +1,11 @@
+.env
+data/*.db
+data/memory.json
+eval/results/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# personal planning notes, not part of the project
+简历先行-规格.md
