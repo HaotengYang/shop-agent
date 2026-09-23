@@ -5,6 +5,11 @@ on:
     branches: [main, dev, staging]
   pull_request:
 
+env:
+  LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+  LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+  LLM_MODEL: ${{ secrets.LLM_MODEL }}
+
 jobs:
   test-and-gate:
     runs-on: ubuntu-latest
@@ -19,11 +24,7 @@ jobs:
       - name: Contract tests (mock model)
         run: uv run pytest -q
       - name: Eval quality gate (real model, only when a key is configured)
-        if: ${{ secrets.LLM_API_KEY != '' }}
-        env:
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        if: ${{ env.LLM_API_KEY != '' }}
         run: uv run python eval/run_eval.py
       - uses: actions/upload-artifact@v4
         if: always()
